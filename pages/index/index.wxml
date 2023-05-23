@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="btn-group">
+    <button class="btn" bind:tap="toggleSearch">{{ !searching ? 'start search' : 'stop search' }}</button>
+    <button class="btn" disabled="{{ !deviceId }}" bind:tap="readBatteryInfo">read battery info</button>
+    <button class="btn" disabled="{{ !deviceId }}" bind:tap="handlePrint">print</button>
+  </view>
+  <view>device total: {{ devices.length }}</view>
+  <view class="device-list" bind:tap="handleConnect">
+    <view class="device-item {{ device.deviceId === deviceId ? 'active' : '' }}" wx:for="{{ devices }}" wx:for-item="device" wx:key="deviceId" mark:deviceId="{{ device.deviceId }}">
+      <view>index: {{ index }}</view>
+      <view>id: {{ device.deviceId }}</view>
+      <view>name: {{ device.name }}</view>
+      <view>
+        advertisServiceUUIDS:
+        <view wx:for="{{ device.advertisServiceUUIDs }}" wx:for-item="uuids" wx:key="uuids">
+          {{ uuids }}
+        </view>
+      </view>
+      <view>RSSI: {{ device.RSSI }}</view>
+    </view>
+  </view>
+</view>

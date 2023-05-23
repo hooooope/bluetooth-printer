@@ -1,0 +1,26 @@
+/**index.wxss**/
+page {
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+.btn-group {}
+
+.btn {
+  margin: 5px 0;
+  background: #e8e8e8;
+}
+
+.device-list {}
+
+.device-item {
+  margin: 5px 0;
+  padding: 5px 10px;
+  background: #e8e8e8;
+  border-radius: 10px;
+}
+
+.device-item.active {
+  color: white;
+  background: #000;
+}
